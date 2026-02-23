@@ -15,3 +15,17 @@ function App() {
 
   return (
     <HashRouter>
+      <div className='page-container'>
+        <Navbar />
+        <Routes>
+          <Route path ="/" element={<HomePage />} />
+          <Route path = "/calendar" element={<CalendarPage/>} />
+          <Route path = "/tasks" element={<TasksPage/>} />
+          <Route path = "/settings" element={<SettingsPage/>}/>
+        </Routes>
+      </div>
+    </HashRouter>
+  )
+}
+
+export default App;
