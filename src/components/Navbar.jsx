@@ -10,6 +10,7 @@ const Navbar = () => {
                     <li><Link to="/tasks">Tasks</Link></li>
                     <li><Link to="/settings">Settings</Link></li>
                 </ul>
+
             </div>
         </nav>
     );

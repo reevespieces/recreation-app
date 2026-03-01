@@ -5,7 +5,7 @@ const SettingsPage = () => {
         <Wrapper>
             <h2>Settings</h2>
         </Wrapper>
-    )
-}
+    );
+};
 
 export default SettingsPage;
