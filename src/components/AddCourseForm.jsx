@@ -1,11 +1,9 @@
 import { useReducer, useRef, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-// Helpers
 const stripTags = (s) => String(s ?? "").replace(/<\/?[^>]+>/g, "");
 const trimCollapse = (s) => String(s ?? "").trim().replace(/\s+/g, " ");
 
-// Initial state
 const initialState = {
   values: { name: "" },
   error: "",
@@ -13,7 +11,6 @@ const initialState = {
   isSubmitting: false,
 };
 
-// Reducer
 const formReducer = (state, action) => {
   switch (action.type) {
     case "SET_VALUE":
