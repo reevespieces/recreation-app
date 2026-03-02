@@ -1,13 +1,11 @@
 import Wrapper from "../components/Wrapper";
-import Courses from "../components/Courses";
 import Calendar from "../components/Calendar";
+import Sidebar from "../components/Sidebar";
 
 const HomePage = () => {
     return (
         <div>
-            <Wrapper id="sidebar">
-                <Courses />
-            </Wrapper>
+            <Sidebar />
             <Calendar />
         </div>
     )
