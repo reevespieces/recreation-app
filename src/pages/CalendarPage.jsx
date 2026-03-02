@@ -1,5 +1,5 @@
-import Wrapper from "../components/Wrapper";
-import Calendar from "../components/Calendar";
+import Wrapper from "../components/Wrapper.jsx";
+import Calendar from "../components/Calendar.jsx";
 
 const CalendarPage = () => {
     return(

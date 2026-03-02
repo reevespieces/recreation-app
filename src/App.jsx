@@ -12,14 +12,27 @@ import AddCoursePage from './pages/AddCoursePage.jsx';
 
 function App() {
 
+  const [courses, setCourses] = useState([
+        { name: "CGT 390" },
+        { name: "FLM 361" },
+        { name: "GS 210" },
+        { name: "PHYS 220" },
+        { name: "CGT 25001" },
+        { name: "FLM 371" }
+    ]);
+
+    const addCourse = (course) => {
+    setCourses(prev => [...prev, course]);
+  };
+
 
   return (
     <HashRouter>
       <div className='page-container'>
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/addcourse" element={<AddCoursePage />} />
+          <Route path="/" element={<HomePage courses={courses}/>} />
+          <Route path="/addcourse" element={<AddCoursePage addCourse={addCourse}/>} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/settings" element={<SettingsPage />} />

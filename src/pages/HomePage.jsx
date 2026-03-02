@@ -1,22 +1,19 @@
-import Wrapper from "../components/Wrapper";
-import Calendar from "../components/Calendar";
-import Sidebar from "../components/Sidebar";
+import Calendar from "../components/Calendar.jsx";
+import Sidebar from "../components/Sidebar.jsx";
 import { useState } from "react";
 import "../styles/homepage.css";
+import { Link } from "react-router-dom";
 
-const HomePage = () => {
-    const [courses, setCourses] = useState([
-        { name: "CGT 390" },
-        { name: "FLM 361" },
-        { name: "GS 210" },
-        { name: "PHYS 220" },
-        { name: "CGT 25001" },
-        { name: "FLM 371" }
-    ]);
-
+const HomePage = ({ courses }) => {
     return (
         <div className="homepage-layout">
             <Sidebar courses={courses} />
+
+            <div className="button-container">
+                <Link to="/addcourse" className="course-add">
+                    Add a course
+                </Link>
+            </div>
 
             <div className="main-content">
                 <div className="content-wrapper">
