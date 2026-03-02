@@ -7,6 +7,7 @@ import CalendarPage from './pages/CalendarPage.jsx'
 import TasksPage from './pages/TasksPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
 import NotFound from './pages/NotFound.jsx';
+import AddCoursePage from './pages/AddCoursePage.jsx';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/addcourse" element={<AddCoursePage />} />
           <Route path="/calendar" element={<CalendarPage />} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/settings" element={<SettingsPage />} />

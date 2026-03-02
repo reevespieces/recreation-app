@@ -1,5 +1,3 @@
-import "../styles/courses.css";
-
 const Courses = ({ courses }) => {
     return (
         <div>

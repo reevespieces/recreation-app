@@ -17,6 +17,7 @@ const HomePage = () => {
     return (
         <div className="homepage-layout">
             <Sidebar courses={courses} />
+
             <div className="main-content">
                 <div className="content-wrapper">
                     <Calendar />
