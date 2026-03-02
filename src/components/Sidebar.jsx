@@ -1,15 +1,15 @@
 import Wrapper from "./Wrapper";
 import Courses from "./Courses";
+import "../styles/sidebar.css";
 
-const Sidebar = () => {
+const Sidebar = ({ courses }) => {
     return (
-        <Wrapper className="sidebar">
+        <div className="sidebar">
             <div className="sidebar-content">
-                <Courses/>
+                <Courses courses={courses} />
             </div>
-        </Wrapper>
-
-    )
-}
+        </div>
+    );
+};
 
 export default Sidebar;

@@ -1,0 +1,55 @@
+/* Container for sidebar + main content */
+.homepage-layout {
+    display: flex;
+    width: 100%;
+}
+
+/* Main content sits to the right of sidebar */
+.main-content {
+  margin-left: 600px;   /* space for sidebar */
+  padding: 2rem;
+}
+
+/* Sidebar styling */
+.sidebar {
+    position: fixed;
+    top: 60px;                     /* adjust for navbar height */
+    left: 0;
+    width: 250px;
+    height: calc(100vh - 60px);    /* full viewport height minus navbar */
+    background-color: #f8f8f8;
+    border-right: 1px solid #e0e0e0;
+    padding: 0.5rem;
+    overflow-y: auto;
+    z-index: 100;
+}
+
+.sidebar-content {
+    overflow-y: auto;
+}
+
+/* Sidebar Courses */
+.sidebar h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card {
+    background-color: white;
+    padding: 0.05rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.75rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    background-color: rgb(245, 230, 255);
+    transform: translateX(4px);
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;   /* THIS centers it */
+}

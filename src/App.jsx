@@ -7,10 +7,10 @@ import CalendarPage from './pages/CalendarPage.jsx'
 import TasksPage from './pages/TasksPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
 import NotFound from './pages/NotFound.jsx';
-import Sidebar from './components/Sidebar.jsx';
 
 
 function App() {
+
 
   return (
     <HashRouter>

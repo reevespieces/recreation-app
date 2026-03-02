@@ -1,12 +1,18 @@
-const Courses = () => {
-    const name = "Gay 101"
-    return(
+import "../styles/courses.css";
+
+const Courses = ({ courses }) => {
+    return (
         <div>
             <h3>Courses</h3>
-            <div className="card">
-                <p>{name}</p>
-            </div>
+
+            {courses.map((course, index) => (
+                <div className="card" key={index}>
+                    <p>{course.name}</p>
+                </div>
+            ))}
+
         </div>
     );
-}
+};
+
 export default Courses;
