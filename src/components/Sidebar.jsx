@@ -1,4 +1,3 @@
-import Wrapper from "./Wrapper.jsx";
 import Courses from "./Courses.jsx";
 import { Link } from "react-router-dom";
 import "../styles/sidebar.css";

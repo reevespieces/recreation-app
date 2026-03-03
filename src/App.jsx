@@ -24,7 +24,6 @@ function App() {
   const [events, setEvents] = useState([]);
   const handleAddEvent = (event) => setEvents((prev) => [...prev, event]);
 
-  // **Tasks state lifted to App**
   const [tasks, setTasks] = useState([
     { id: 1, name: "Read Chapter 1", done: false },
     { id: 2, name: "Do HW 5", done: false },

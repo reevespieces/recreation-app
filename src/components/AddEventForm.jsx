@@ -11,7 +11,6 @@ const initialState = {
   success: "",
 };
 
-// Simple reducer similar to your profile form
 const formReducer = (state, action) => {
   switch (action.type) {
     case "SET_VALUE":

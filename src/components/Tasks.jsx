@@ -19,14 +19,14 @@ const Tasks = () => {
   };
 
   const addTask = () => {
-    if (newTask.trim() === "") return; // don't add empty tasks
+    if (newTask.trim() === "") return;
     const nextId = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
     setTasks((prev) => [...prev, { id: nextId, name: newTask, done: false }]);
-    setNewTask(""); // clear input after adding
+    setNewTask("");
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === "Enter") addTask(); // allow adding with Enter key
+    if (e.key === "Enter") addTask();
   };
 
   return (

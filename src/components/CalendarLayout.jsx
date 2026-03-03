@@ -26,7 +26,6 @@ const CalendarLayout = ({ initialEvents = [], allowAddEvent = false, onAddEvent 
     });
   };
 
-  // Update events if AddEventPage adds new ones
   const handleNewEvent = (event) => {
     setEvents((prev) => [...prev, event]);
     onAddEvent?.(event);
