@@ -8,3 +8,8 @@ I choose to recreate the basic functions, with the calendar and tasks functions,
 The Features that I emplimented are: course lists and adding courses, calendar with seeing events on one page, and adding new ones on the actual calendar page. I also included a tasks list that can have tasks added to it. 
 
 I used state management mainly when updating the states and adding content, like with the courses and the events. I implemented a HashRouter structure like how we originally discussed in class. I used a variety of hooks for state, effect, navigation, ref, etc.
+
+Repository URL: https://github.com/reevespieces/profile-app.git
+Live site URL: https://reevespieces.github.io/recreation-app/#/
+
+Future imporvements: make it more interactive and add more features, add dark mode, add more accesibility features, add ability to make multiple task lists, make it overall more clean and full, and maybe imporving from the original shovel design.
