@@ -1,12 +1,12 @@
-import Wrapper from "../components/Wrapper.jsx";
-import Calendar from "../components/Calendar.jsx";
+import CalendarLayout from "../components/CalendarLayout";
+import "../styles/calendarpage.css";
 
 const CalendarPage = () => {
-    return(
-    <Wrapper>
-        <Calendar />
-    </Wrapper>
-    );
-}
+  return (
+    <div className="calendar-page">
+      <CalendarLayout />
+    </div>
+  );
+};
 
 export default CalendarPage;

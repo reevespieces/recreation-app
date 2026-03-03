@@ -1,5 +1,6 @@
 import { useReducer, useRef, useLayoutEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../styles/addcourse.css";
 
 const stripTags = (s) => String(s ?? "").replace(/<\/?[^>]+>/g, "");
 const trimCollapse = (s) => String(s ?? "").trim().replace(/\s+/g, " ");
@@ -91,9 +92,14 @@ const AddCourseForm = ({ addCourse }) => {
   const disabled = !trimCollapse(name) || isSubmitting;
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Course Name</label>
-      <br />
+  <div className="add-course-container">
+    <form onSubmit={handleSubmit} className="add-course-form">
+      <h2 className="add-course-title">Add Course</h2>
+
+      <label htmlFor="name" className="add-course-label">
+        Course Name
+      </label>
+
       <input
         ref={inputRef}
         id="name"
@@ -101,18 +107,22 @@ const AddCourseForm = ({ addCourse }) => {
         type="text"
         value={name}
         onChange={handleChange}
+        className="add-course-input"
       />
-      <br />
-      <br />
 
-      <button type="submit" disabled={disabled}>
+      <button
+        type="submit"
+        disabled={disabled}
+        className="add-course-button"
+      >
         Add Course
       </button>
 
-      {error && <p>{error}</p>}
-      {success && <p>{success}</p>}
+      {error && <p className="add-course-error">{error}</p>}
+      {success && <p className="add-course-success">{success}</p>}
     </form>
-  );
+  </div>
+);
 };
 
 export default AddCourseForm;

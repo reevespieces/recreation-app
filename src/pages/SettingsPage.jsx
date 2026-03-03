@@ -8,4 +8,4 @@ const SettingsPage = () => {
     );
 };
 
-export default SettingsP
+export default SettingsPage;

@@ -1,4 +1,4 @@
-import Calendar from "../components/Calendar.jsx";
+import CalendarLayout from "../components/CalendarLayout.jsx";
 import Sidebar from "../components/Sidebar.jsx";
 import { useState } from "react";
 import "../styles/homepage.css";
@@ -17,7 +17,7 @@ const HomePage = ({ courses }) => {
 
             <div className="main-content">
                 <div className="content-wrapper">
-                    <Calendar />
+                    <CalendarLayout/>
                 </div>
             </div>
         </div>

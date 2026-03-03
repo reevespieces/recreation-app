@@ -9,4 +9,4 @@ const TasksPage = () => {
     )
 }
 
-export default Ta
+export default TasksPage;

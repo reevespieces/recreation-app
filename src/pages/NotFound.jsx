@@ -13,4 +13,4 @@ const NotFound = () => {
     )
 }
 
-export default NotFo
+export default NotFound;

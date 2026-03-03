@@ -1,0 +1,72 @@
+/* Page Layout */
+.calendar-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card Wrapper */
+.calendar-wrapper {
+  width: 900px;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.calendar-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(205, 139, 241);
+}
+
+/* Make calendar BIG */
+.custom-calendar {
+  width: 100% !important;
+  border: none;
+  font-family: inherit;
+}
+
+/* Navigation (Month header) */
+.react-calendar__navigation button {
+  color: rgb(205, 139, 241);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Day tiles */
+.react-calendar__tile {
+  height: 80px;
+  font-size: 1rem;
+}
+
+/* Hover effect */
+.react-calendar__tile:hover {
+  background: rgba(205, 139, 241, 0.15);
+  border-radius: 8px;
+}
+
+/* Active selected date */
+.react-calendar__tile--active {
+  background: rgb(205, 139, 241) !important;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Today's date */
+.react-calendar__tile--now {
+  background: rgba(205, 139, 241, 0.25);
+  border-radius: 8px;
+}
+
+/* Selected date text */
+.calendar-selected {
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: #444;
+}
