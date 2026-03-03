@@ -1,3 +1,181 @@
 /* Page Layout */
 .calendar-page {
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Card Wrapper */
+.calendar-wrapper {
+  width: 900px;
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+.calendar-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: rgb(205, 139, 241);
+}
+
+/* Make calendar BIG */
+.custom-calendar {
+  width: 100% !important;
+  border: none;
+  font-family: inherit;
+}
+
+/* Navigation (Month header) */
+.react-calendar__navigation button {
+  color: rgb(205, 139, 241);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Day tiles */
+.react-calendar__tile {
+  height: 80px;
+  font-size: 1rem;
+}
+
+/* Hover effect */
+.react-calendar__tile:hover {
+  background: rgba(205, 139, 241, 0.15);
+  border-radius: 8px;
+}
+
+/* Active selected date */
+.react-calendar__tile--active {
+  background: rgb(205, 139, 241) !important;
+  color: white;
+  border-radius: 8px;
+}
+
+/* Today's date */
+.react-calendar__tile--now {
+  background: rgba(205, 139, 241, 0.25);
+  border-radius: 8px;
+}
+
+/* Selected date text */
+.calendar-selected {
+  margin-top: 1.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* Purple dot under day */
+.event-dot {
+  width: 6px;
+  height: 6px;
+  background: rgb(205, 139, 241);
+  border-radius: 50%;
+  margin: 4px auto 0;
+}
+
+/* Event list below calendar */
+.event-list {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.event-item {
+  background: rgba(205, 139, 241, 0.1);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  margin-top: 0.5rem;
+}
+
+.selected-day-events {
+  margin-top: 1rem;
+  background-color: #f8f8f8;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.selected-day-events h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.selected-day-events ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.selected-day-events li {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.2rem;
+}
+
+/* Event list below calendar - app style */
+.selected-day-events {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Title for events */
+.selected-day-events h3 {
+  font-size: 1rem;
+  color: rgb(205, 139, 241);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* Individual event cards */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.event-item {
+  background-color: rgb(245, 230, 255);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.event-item:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Force all calendar day numbers to be black */
+.react-calendar__tile {
+  color: #000 !important;
+}
+
+/* Keep selected day text white (already in your style) */
+.react-calendar__tile--active {
+  color: white !important;
+}
+
+/* Today's date number stays black */
+.react-calendar__tile--now {
+  color: #000 !important;
+}
+
+/* Ensure hovered day numbers stay black */
+.react-calendar__tile:hover {
+  color: #000 !important;
+}

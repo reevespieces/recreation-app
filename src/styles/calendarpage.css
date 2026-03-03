@@ -1,3 +1,8 @@
 .calendar-page {
   display: flex;
-  justify-content: center; /* c
+  justify-content: center; /* centers horizontally */
+  align-items: flex-start; /* start from top vertically */
+  min-height: 100vh;       /* full viewport height */
+  padding: 2rem;
+  margin-left: 180px;
+}

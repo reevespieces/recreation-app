@@ -7,4 +7,103 @@ const stripTags = (s) => String(s ?? "").replace(/<\/?[^>]+>/g, "");
 const trimCollapse = (s) => String(s ?? "").trim().replace(/\s+/g, " ");
 
 const initialState = {
-  values: { na
+  values: { name: "", description: "" },
+  error: "",
+  success: "",
+  isSubmitting: false,
+};
+
+const formReducer = (state, action) => {
+  switch (action.type) {
+    case "SET_VALUE":
+      return { ...state, values: { ...state.values, [action.field]: action.payload }, error: "" };
+    case "START_SUBMIT":
+      return { ...state, isSubmitting: true, error: "" };
+    case "SUBMIT_SUCCESS":
+      return { ...state, success: "Event added!", isSubmitting: false, values: { name: "", description: "" } };
+    case "SUBMIT_ERROR":
+      return { ...state, error: action.payload, isSubmitting: false };
+    default:
+      return state;
+  }
+};
+
+const AddEventPage = ({ onAddEvent }) => {
+  const [state, dispatch] = useReducer(formReducer, initialState);
+  const { values, error, success, isSubmitting } = state;
+  const { name, description } = values;
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const selectedDate = location.state?.selectedDate || new Date().toISOString().split("T")[0];
+
+  const inputRef = useRef(null);
+  useLayoutEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    dispatch({ type: "SET_VALUE", field: name, payload: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch({ type: "START_SUBMIT" });
+
+    const cleanedName = stripTags(trimCollapse(name));
+    const cleanedDesc = stripTags(trimCollapse(description));
+
+    if (!cleanedName) {
+      dispatch({ type: "SUBMIT_ERROR", payload: "Event name cannot be empty." });
+      return;
+    }
+
+    try {
+      onAddEvent({
+        name: cleanedName,
+        description: cleanedDesc,
+        date: selectedDate,
+      });
+      dispatch({ type: "SUBMIT_SUCCESS" });
+
+      setTimeout(() => {
+        navigate("/calendar");
+      }, 800);
+    } catch {
+      dispatch({ type: "SUBMIT_ERROR", payload: "Something went wrong." });
+    }
+  };
+
+  const disabled = !trimCollapse(name) || isSubmitting;
+
+  return (
+    <div className="add-event-page">
+  <div className="add-event-container">
+    <h2>Add Event for {selectedDate}</h2>
+    <form onSubmit={handleSubmit} className="add-event-form">
+      <label htmlFor="name">Event Name</label>
+      <input ref={inputRef} id="name" name="name" value={name} onChange={handleChange} />
+
+      <label htmlFor="description">Description</label>
+      <textarea
+        id="description"
+        name="description"
+        value={description}
+        onChange={handleChange}
+        maxLength={200}
+      />
+
+      <button type="submit" disabled={disabled}>
+        Add Event
+      </button>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && <p style={{ color: "green" }}>{success}</p>}
+    </form>
+  </div>
+</div>
+  );
+};
+
+export default AddEventPage;

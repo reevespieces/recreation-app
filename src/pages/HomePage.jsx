@@ -17,4 +17,17 @@ const HomePage = ({ courses }) => {
 
             <div className="button-container">
                 <Link to="/addcourse" className="course-add">
-          
+                    Add a course
+                </Link>
+            </div>
+
+            <div className="main-content">
+                <div className="content-wrapper">
+                    <CalendarLayout initialEvents={preaddedEvents} allowAddEvent={false}/>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default HomePage;

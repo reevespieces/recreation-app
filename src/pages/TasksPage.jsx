@@ -1,12 +1,12 @@
 import Wrapper from "../components/Wrapper.jsx";
 import Tasks from "../components/Tasks.jsx";
 
-const TasksPage = () => {
-    return(
+const TasksPage = ({ tasks, toggleTask, addTask }) => {
+    return (
         <Wrapper>
-            <Tasks/>
+            <Tasks tasks={tasks} toggleTask={toggleTask} addTask={addTask} />
         </Wrapper>
-    )
-}
+    );
+};
 
-export default Ta
+export default TasksPage;

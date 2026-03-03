@@ -21,9 +21,6 @@ const Navbar = () => {
                     <li>
                         <NavLink to="/tasks">Tasks</NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/settings">Settings</NavLink>
-                    </li>
                 </ul>
 
             </div>
