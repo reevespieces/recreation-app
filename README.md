@@ -3,18 +3,8 @@
 For my individual project website application recreation assignment the website that I have selected to recreate is the shovel planner app. https://dig.shovelapp.io/216182/home
 I have provided the link, but since it is account based it might not work.
 
-To run the project, use npm run dev
+I choose to recreate the basic functions, with the calendar and tasks functions, as well as working to implement a sidebar layout, like scene in the original website, in addition to the navbar.
 
-Planned features for my shovel app rebuild
+The Features that I emplimented are: course lists and adding courses, calendar with seeing events on one page, and adding new ones on the actual calendar page. I also included a tasks list that can have tasks added to it. 
 
-Add a task MVP
-
-Add a course MVP
-
-Add an event on the calendar MVP
-
-Drag and drop items into calendar Stretch
-
-Notification system Stretch
-
-Dark and light mode Stretch
+I used state management mainly when updating the states and adding content, like with the courses and the events. I implemented a HashRouter structure like how we originally discussed in class. I used a variety of hooks for state, effect, navigation, ref, etc.
