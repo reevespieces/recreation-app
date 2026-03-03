@@ -8,6 +8,8 @@ const Tasks = () => {
     { id: 3, name: "Write essay", done: false },
   ]);
 
+  const [newTask, setNewTask] = useState("");
+
   const toggleTask = (id) => {
     setTasks((prev) =>
       prev.map((task) =>
@@ -16,9 +18,32 @@ const Tasks = () => {
     );
   };
 
+  const addTask = () => {
+    if (newTask.trim() === "") return; // don't add empty tasks
+    const nextId = tasks.length ? tasks[tasks.length - 1].id + 1 : 1;
+    setTasks((prev) => [...prev, { id: nextId, name: newTask, done: false }]);
+    setNewTask(""); // clear input after adding
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") addTask(); // allow adding with Enter key
+  };
+
   return (
     <div className="task-lists">
       <h2 className="tasks-title">To-Do List</h2>
+
+      <div className="add-task">
+        <input
+          type="text"
+          value={newTask}
+          onChange={(e) => setNewTask(e.target.value)}
+          onKeyPress={handleKeyPress}
+          placeholder="Add a new task"
+        />
+        <button onClick={addTask}>Add</button>
+      </div>
+
       <ul className="tasks-ul">
         {tasks.map((task) => (
           <li

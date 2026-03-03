@@ -3,7 +3,7 @@
   flex-direction: column;
   align-items: center;
   padding: 2rem;
-  margin-left: 500px;
+  margin-left: 520px;
 }
 
 .tasks-title {
@@ -46,4 +46,32 @@
 .task-item input {
   cursor: pointer;
   accent-color: rgb(205, 139, 241);
+}
+
+.add-task {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.add-task button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(205, 139, 241);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-task button:hover {
+  background-color: rgb(175, 109, 211);
 }
