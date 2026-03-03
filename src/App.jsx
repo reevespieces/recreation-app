@@ -8,6 +8,7 @@ import TasksPage from './pages/TasksPage.jsx'
 import SettingsPage from './pages/SettingsPage.jsx'
 import NotFound from './pages/NotFound.jsx';
 import AddCoursePage from './pages/AddCoursePage.jsx';
+import AddEventPage from './pages/AddEventPage.jsx';
 
 
 function App() {
@@ -25,6 +26,12 @@ function App() {
     setCourses(prev => [...prev, course]);
   };
 
+  const [events, setEvents] = useState([]);
+
+  const handleAddEvent = (event) => {
+    setEvents((prev) => [...prev, event]);
+  };
+
 
   return (
     <HashRouter>
@@ -33,7 +40,8 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage courses={courses}/>} />
           <Route path="/addcourse" element={<AddCoursePage addCourse={addCourse}/>} />
-          <Route path="/calendar" element={<CalendarPage />} />
+          <Route path="/addevent" element={<AddEventPage onAddEvent={handleAddEvent}/>} />
+          <Route path="/calendar" element={<CalendarPage events={events}/>} />
           <Route path="/tasks" element={<TasksPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="*" element={<NotFound />} />

@@ -20,4 +20,4 @@ const Sidebar = ({ courses }) => {
     );
 };
 
-export default Sidebar;
+export default 
